@@ -8,7 +8,7 @@ public class PlayerLighter : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-        if(Input.GetKey("k")) //Why K ?! xD
+        if(Input.GetKey("e")) //Why K ?! xD
         {
             isLighting = true;
         }
