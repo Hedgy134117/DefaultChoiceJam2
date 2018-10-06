@@ -22,6 +22,7 @@ public class TorchIsLit : MonoBehaviour {
 
     private void Start()
     {
+        _lifeTime = lifetime;
         _playerLighter = FindObjectOfType<PlayerLighter>(); //Storing the Component in the variable
         //this work only because we know we have only one playerlighter in the scene, if there were more than one, this function will only return the first one it finds
     }
