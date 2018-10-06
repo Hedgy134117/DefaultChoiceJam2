@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Pathfinding;
 
 public class TorchIsLit : MonoBehaviour {
 
@@ -12,10 +13,11 @@ public class TorchIsLit : MonoBehaviour {
     //So, FindGameObjectWithTag is really super slow and you can't afford to do it every frame, you're just going to kill your fps
     //The best way is to do that only one time and to store the object in a variable, since the player is always the same
 
-
+    
     public GameObject torchLight;
     private PlayerLighter _playerLighter; //this is where we will store the playerLighter object. In C# everything that can be passed by reference is passed by reference (That mean what is stored in it is not 
                                           //a copy of the object, but a direct access to it
+    private Bounds _graphsBounds; //for pathfinfing
     public float lifetime; //Just moved them here
     private float _lifeTime;
     //private bool isLighting; //I commented it because you don't need a duplicate since you can access the variable directly
@@ -25,6 +27,8 @@ public class TorchIsLit : MonoBehaviour {
         _lifeTime = lifetime;
         _playerLighter = FindObjectOfType<PlayerLighter>(); //Storing the Component in the variable
         //this work only because we know we have only one playerlighter in the scene, if there were more than one, this function will only return the first one it finds
+
+        _graphsBounds = GetComponent<SphereCollider>().bounds;
     }
    
     private bool IsPlayerLigthing() //this function return a boolean, so you can use it directly in a if()
@@ -42,6 +46,8 @@ public class TorchIsLit : MonoBehaviour {
             {
                 _lifeTime = lifetime; // reset lifetime (réinitialiser la duree)
                 torchLight.SetActive(false);// make torchlight inactive (fait le torchlight inactif)
+                AstarPath.active.UpdateGraphs(_graphsBounds);
+
             }
         }
     }
@@ -57,6 +63,7 @@ public class TorchIsLit : MonoBehaviour {
             if(IsPlayerLigthing() == true)
             {
                 torchLight.SetActive(true); // Make the light of the torch appear (fais apparaitre la lumiere de la lampe )
+                AstarPath.active.UpdateGraphs(_graphsBounds);
             }
         }
     }
