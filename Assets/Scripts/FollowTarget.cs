@@ -14,6 +14,7 @@ public class FollowTarget : MonoBehaviour {
     private void Start()
     {
         _dist = transform.position - target.position;
+        _lastPos = transform.position;
     }
 
     private void Update()
