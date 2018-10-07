@@ -343,7 +343,6 @@ MonoBehaviour:
   offsetTimeChange: 0.05
   baseIntensity: 4
   intensityVariation: 0.8
-  lerp: 1
   scaleObject: {fileID: 4586904479379210}
 --- !u!135 &135352110521544698
 SphereCollider:
@@ -355,7 +354,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 4
+  m_Radius: 5.5
   m_Center: {x: 0, y: -0.5, z: 0}
 --- !u!135 &135785601127396280
 SphereCollider:
@@ -367,7 +366,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 3.5
+  m_Radius: 4.2
   m_Center: {x: 0, y: -2, z: 0}
 --- !u!212 &212991486629482408
 SpriteRenderer:
