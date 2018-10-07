@@ -61,10 +61,10 @@ public class TorchIsLit : MonoBehaviour {
 
     //TODO : Make a trigger zone around the torch so you don't have to literaly kiss the cube every time you want to light a torch
     //This is good, I just replaced if(isLighting == true) by the function that return directly the variable
-    private void OnCollisionStay(Collision collision)
+    private void OnTriggerStay(Collider other)
     {
         
-        if(collision.gameObject.CompareTag("Player"))// Check if player is touching the torch & lighting it (Verifie si le joueur est entrain de toucher la lampe et de l'allumer)
+        if(other.gameObject.CompareTag("Player") && Vector3.Distance(other.transform.position, transform.position) < 2)// Check if player is touching the torch & lighting it (Verifie si le joueur est entrain de toucher la lampe et de l'allumer)
         {
             if(IsPlayerLigthing() == true && torchLight.activeInHierarchy == false)
             {
