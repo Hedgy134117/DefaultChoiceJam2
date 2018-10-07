@@ -15,6 +15,6 @@ public class GiveTarget : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        aiPath.target = target;
+        aiPath.destination = target.position;
 	}
 }

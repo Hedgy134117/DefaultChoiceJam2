@@ -8,6 +8,8 @@ public class FollowTarget : MonoBehaviour {
     public float followSpeed;
     private Vector3 _dist;
     private Vector3 _targetMove;
+    private Vector3 _lastPos;
+    private float _t = 0;
 
     private void Start()
     {
@@ -16,8 +18,14 @@ public class FollowTarget : MonoBehaviour {
 
     private void Update()
     {
-        _targetMove = target.position + _dist;
-        transform.position += (_targetMove - transform.position) * Time.deltaTime * followSpeed;
+        _t += Time.deltaTime;
+        transform.position = Vector3.Lerp(_lastPos, _targetMove, _t / Time.fixedDeltaTime);
+    }
+
+    private void FixedUpdate()
+    {
+        _lastPos = transform.position;
+        _targetMove = transform.position + ((target.position + _dist) - _lastPos) * Time.deltaTime * followSpeed ;
     }
 
 }

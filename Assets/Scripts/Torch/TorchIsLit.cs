@@ -60,7 +60,7 @@ public class TorchIsLit : MonoBehaviour {
         
         if(collision.gameObject.CompareTag("Player"))// Check if player is touching the torch & lighting it (Verifie si le joueur est entrain de toucher la lampe et de l'allumer)
         {
-            if(IsPlayerLigthing() == true)
+            if(IsPlayerLigthing() == true && torchLight.activeInHierarchy == false)
             {
                 torchLight.SetActive(true); // Make the light of the torch appear (fais apparaitre la lumiere de la lampe )
                 AstarPath.active.UpdateGraphs(_graphsBounds);
