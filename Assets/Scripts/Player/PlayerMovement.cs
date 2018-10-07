@@ -6,7 +6,7 @@ public class PlayerMovement : MonoBehaviour {
 
     public float speed;
     //public bool azertyKeyboard;//Because french people are annoying with their weird keyboard
-
+    public GameObject[] wheels;
     private Rigidbody rb;
 
     public static PlayerMovement instance { private set; get; }
@@ -34,6 +34,8 @@ public class PlayerMovement : MonoBehaviour {
 
         if(dir !=Vector3.zero)
             transform.right = dir;
+        if (rb.velocity != Vector3.zero)
+            foreach (var wheel in wheels) wheel.transform.Rotate(Vector3.up * 360 * Time.deltaTime, Space.Self);
     }
     //{
     //    if (azertyKeyboard)
