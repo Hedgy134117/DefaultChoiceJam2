@@ -68,6 +68,7 @@ public class TorchIsLit : MonoBehaviour {
         {
             if(IsPlayerLigthing() == true && torchLight.activeInHierarchy == false)
             {
+                PlayerLighter.instance.lighterCount--;
                 torchLight.transform.localScale = Vector3.zero;
                 torchLight.SetActive(true); // Make the light of the torch appear (fais apparaitre la lumiere de la lampe )
                 torchLight.transform.DOScale(Vector3.one, 0.18f).SetEase(Ease.OutCubic).OnComplete(() => AstarPath.active.UpdateGraphs(_graphsBounds) );

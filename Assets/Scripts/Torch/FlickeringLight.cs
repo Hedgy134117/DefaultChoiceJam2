@@ -30,7 +30,7 @@ public class FlickeringLight : MonoBehaviour {
 
             _light.DOIntensity(intensity, duration);
             if (scaleObject != null) scaleObject.DOScale(_initialScale * (1 + ((intensity - baseIntensity) / baseIntensity) * 0.09f), duration - 0.001f);
-            Debug.Log(intensity + " " + duration);
+
 
 
         }

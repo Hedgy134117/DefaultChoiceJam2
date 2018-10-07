@@ -30,6 +30,7 @@ public class EnemyAI : MonoBehaviour {
         _AIPath.maxSpeed = chaseSpeed;
         AstarPath.active.logPathResults = PathLog.OnlyErrors;
         _AIPath.target = _player;
+        _AIPath.SearchPath();
     }
 	
 	// Update is called once per frame
@@ -53,6 +54,7 @@ public class EnemyAI : MonoBehaviour {
             _chasing = true;
             _AIPath.maxSpeed = chaseSpeed;
             _AIPath.target = _player;
+            _AIPath.SearchPath();
         }
     }
 
@@ -66,6 +68,7 @@ public class EnemyAI : MonoBehaviour {
 
             _wanderTimeLeft = wanderRepathTime + Random.Range(-wanderRepathOffset, wanderRepathOffset);
             _AIPath.destination = GetRandomWalkableTile();
+            _AIPath.SearchPath();
         }
         _wanderTimeLeft -= Time.deltaTime;
         if (_wanderTimeLeft < 0 || _AIPath.reachedEndOfPath)

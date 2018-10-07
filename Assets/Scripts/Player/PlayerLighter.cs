@@ -4,17 +4,29 @@ using UnityEngine;
 
 public class PlayerLighter : MonoBehaviour {
 
-    public bool isLighting;
+    public bool isLighting { get { return _keyPressed && lighterCount > 0; } }
+    private bool _keyPressed;
+    public int lighterCount = 0;
 
-	// Update is called once per frame
-	void Update () {
-        if(Input.GetKey("e")) //Why K ?! xD
+    public static PlayerLighter instance { private set; get; }
+
+    private void Awake()
+    {
+        if (instance == null) instance = this;
+        if (instance != this) Destroy(this);
+    }
+
+    // Update is called once per frame
+    void Update ()
+    {
+        if(Input.GetKey(KeyCode.E)) 
         {
-            isLighting = true;
+            _keyPressed = true;
         }
         else
         {
-            isLighting = false;
+            _keyPressed = false;
         }
     }
+
 }

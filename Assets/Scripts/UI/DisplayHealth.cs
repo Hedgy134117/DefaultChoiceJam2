@@ -12,10 +12,12 @@ public class DisplayHealth : MonoBehaviour {
     private PlayerCollider _playerCollider;
     public Image healthBar;
     public RectTransform feedBackObject;
+    public Text pickupAmount;
 
     private void Start()
     {
         _playerCollider = player.GetComponent<PlayerCollider>();
+        
     }
     // Update is called once per frame
     void Update()
@@ -29,5 +31,6 @@ public class DisplayHealth : MonoBehaviour {
             feedBackObject.DOPunchScale(Vector3.one * 0.14f, 0.18f);
             healthBar.fillAmount = _playerCollider.curHealth / _playerCollider.maxHealth;
         }
+        pickupAmount.text = PlayerLighter.instance.lighterCount + " " + (PlayerLighter.instance.lighterCount > 1 ? "Matchs" : "Match");
     }
 }
