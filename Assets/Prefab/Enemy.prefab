@@ -304,7 +304,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wanderSpeed: 1.5
-  chaseSpeed: 5
+  chaseSpeed: 6.5
   wanderRepathTime: 5
   wanderRepathOffset: 2
   areaSizeX: 28
