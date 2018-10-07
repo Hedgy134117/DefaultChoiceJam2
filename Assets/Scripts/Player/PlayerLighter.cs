@@ -7,6 +7,7 @@ public class PlayerLighter : MonoBehaviour {
     public bool isLighting { get { return _keyPressed && lighterCount > 0; } }
     private bool _keyPressed;
     public int lighterCount = 0;
+    public int points;
 
     public static PlayerLighter instance { private set; get; }
 
