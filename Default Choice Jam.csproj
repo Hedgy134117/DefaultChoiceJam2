@@ -414,6 +414,8 @@
     <Compile Include="Assets\AstarPathfindingProject\Utilities\ProfileHelper.cs" />
     <Compile Include="Assets\AstarPathfindingProject\Utilities\RetainedGizmos.cs" />
     <Compile Include="Assets\AstarPathfindingProject\Utilities\UnityReferenceHelper.cs" />
+    <Compile Include="Assets\DisplayHealth.cs" />
+    <Compile Include="Assets\PlayerCollider.cs" />
     <Compile Include="Assets\Scripts\FollowTarget.cs" />
     <Compile Include="Assets\Scripts\GiveTarget.cs" />
     <Compile Include="Assets\Scripts\OpenUpgradeMenu.cs" />
