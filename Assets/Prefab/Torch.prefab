@@ -145,7 +145,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1857746557389806}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.78, y: 1.33, z: 1.2}
+  m_LocalPosition: {x: 6.63, y: 1.3299999, z: 0.47}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4125754245853002}
@@ -162,7 +162,7 @@ Transform:
   m_GameObject: {fileID: 1575375087665678}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: -2, z: 0}
-  m_LocalScale: {x: 2.8044431, y: 2.8044431, z: 1.0015868}
+  m_LocalScale: {x: 2.8113823, y: 2.8113823, z: 1.004065}
   m_Children: []
   m_Father: {fileID: 4125754245853002}
   m_RootOrder: 0
@@ -288,8 +288,8 @@ Light:
   serializedVersion: 8
   m_Type: 2
   m_Color: {r: 0.990566, g: 0.8714508, b: 0.5186454, a: 1}
-  m_Intensity: 1.6286731
-  m_Range: 10
+  m_Intensity: 4
+  m_Range: 5.226071
   m_SpotAngle: 70
   m_CookieSize: 10
   m_Shadows:
@@ -339,10 +339,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a38b7eb39b277d4cbb7bc40284c97cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeChange: 0.08
+  timeChange: 0.07
   offsetTimeChange: 0.05
-  baseIntensity: 1.6
-  intensityVariation: 0.16
+  baseIntensity: 4
+  intensityVariation: 0.8
   lerp: 1
   scaleObject: {fileID: 4586904479379210}
 --- !u!135 &135352110521544698
@@ -405,7 +405,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 52eb7dc65012ad643a514db5c234f59f, type: 3}
-  m_Color: {r: 1, g: 0.86498433, b: 0.53333336, a: 0.043137256}
+  m_Color: {r: 1, g: 0.8558877, b: 0.49803925, a: 0.078431375}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
