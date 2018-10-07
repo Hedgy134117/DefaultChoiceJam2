@@ -424,18 +424,21 @@
     <Compile Include="Assets\Demigiant\DOTween\Modules\DOTweenModuleUI.cs" />
     <Compile Include="Assets\Demigiant\DOTween\Modules\DOTweenModuleUnityVersion.cs" />
     <Compile Include="Assets\Demigiant\DOTween\Modules\DOTweenModuleUtils.cs" />
-    <Compile Include="Assets\DisplayHealth.cs" />
-    <Compile Include="Assets\PlayerCollider.cs" />
-    <Compile Include="Assets\ResetManager.cs" />
     <Compile Include="Assets\Scripts\EnemyAI.cs" />
-    <Compile Include="Assets\Scripts\FollowTarget.cs" />
-    <Compile Include="Assets\Scripts\GiveTarget.cs" />
-    <Compile Include="Assets\Scripts\OpenUpgradeMenu.cs" />
+    <Compile Include="Assets\Scripts\Pickup\Pickup.cs" />
+    <Compile Include="Assets\Scripts\Pickup\PickupSpawner.cs" />
+    <Compile Include="Assets\Scripts\Player\FollowTarget.cs" />
+    <Compile Include="Assets\Scripts\Player\PlayerCollider.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerLighter.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerMovement.cs" />
     <Compile Include="Assets\Scripts\Torch\FlickeringLight.cs" />
+    <Compile Include="Assets\Scripts\Torch\TorchBurnout.cs" />
     <Compile Include="Assets\Scripts\Torch\TorchIsLit.cs" />
-    <Compile Include="Assets\Scripts\TorchBurnout.cs" />
+    <Compile Include="Assets\Scripts\UI\DisplayHealth.cs" />
+    <Compile Include="Assets\Scripts\UI\OpenUpgradeMenu.cs" />
+    <Compile Include="Assets\Scripts\UI\ResetManager.cs" />
+    <Compile Include="Assets\SpeedUpgradeScript.cs" />
+    <Compile Include="Assets\TorchUpgradeScript.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\AstarPathfindingProject\Editor\EditorAssets\Materials\Navmesh.cginc" />
