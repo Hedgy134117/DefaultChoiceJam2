@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Pathfinding;
+using DG.Tweening;
 
 public class TorchIsLit : MonoBehaviour {
 
@@ -41,12 +42,17 @@ public class TorchIsLit : MonoBehaviour {
     {
         if (torchLight.activeSelf == true) //Check if torchlight is active
         {
-            _lifeTime -= Time.deltaTime;  
-            if (_lifeTime <= 0) // check if lifetime is less than/equal to 0 (vérifier si le lifetime est inférieur ou égal à zero)
+            _lifeTime -= Time.deltaTime;
+            if (_lifeTime <= 0 && DOTween.IsTweening(torchLight.transform) == false) // check if lifetime is less than/equal to 0 (vérifier si le lifetime est inférieur ou égal à zero)
             {
-                _lifeTime = lifetime; // reset lifetime (réinitialiser la duree)
-                torchLight.SetActive(false);// make torchlight inactive (fait le torchlight inactif)
-                AstarPath.active.UpdateGraphs(_graphsBounds);
+                torchLight.transform.DOScale(Vector3.zero, 0.18f).SetEase(Ease.InCubic)
+                    .OnComplete(
+                    () =>
+                    {
+                        torchLight.SetActive(false);// make torchlight inactive (fait le torchlight inactif)
+                        AstarPath.active.UpdateGraphs(_graphsBounds);
+                        _lifeTime = lifetime; // reset lifetime (réinitialiser la duree)
+                    });
 
             }
         }
@@ -62,8 +68,9 @@ public class TorchIsLit : MonoBehaviour {
         {
             if(IsPlayerLigthing() == true && torchLight.activeInHierarchy == false)
             {
+                torchLight.transform.localScale = Vector3.zero;
                 torchLight.SetActive(true); // Make the light of the torch appear (fais apparaitre la lumiere de la lampe )
-                AstarPath.active.UpdateGraphs(_graphsBounds);
+                torchLight.transform.DOScale(Vector3.one, 0.18f).SetEase(Ease.OutCubic).OnComplete(() => AstarPath.active.UpdateGraphs(_graphsBounds) );
             }
         }
     }
